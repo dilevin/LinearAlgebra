@@ -7,6 +7,7 @@ findExternalLibrary("CSparse", "../ExternalLibs")
 
 project "LinearAlgebra"
 	setProjectLocation()
+	setupExternalLibraries()
 	language "C++"
 	kind "StaticLib"
 	uses  "CSparse"

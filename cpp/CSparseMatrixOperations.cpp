@@ -1,3 +1,4 @@
+#ifdef CSPARSE
 #include "CSparseMatrixOperations.h"
 
 using namespace LinearAlgebra;
@@ -7,3 +8,5 @@ using namespace LinearAlgebra;
 //	std::cout<<"CSparse Matrix Multiply \n";
 	//return 1;
 //}
+
+#endif
