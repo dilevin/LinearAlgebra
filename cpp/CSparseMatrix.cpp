@@ -7,7 +7,7 @@ using namespace LinearAlgebra;
 CSparseMatrix::CSparseMatrix(const unsigned int m, const unsigned int n, int nnz) : 
 	SparseMatrix<double>(m,n,nnz)
 {
-	std::cout<<"CSparseMatrix constructor not implemented\n";
+	m_type = GetMatrixType<CSparseMatrix>::matrixType();
 }
 
 	CSparseMatrix::CSparseMatrix(const CSparseMatrix &toCopy) : SparseMatrix(toCopy) 

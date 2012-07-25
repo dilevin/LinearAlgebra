@@ -3,20 +3,13 @@
 
 #include <iostream>
 
+#include "GetMatrixType.h"
+
 /**
 * Matrix parent class
 */
 namespace LinearAlgebra 
 {
-
-	//Table of explicit types available
-	//TODO: Automatically generate from defines (but it's not that big a deal to fill it in)
-	enum 
-	{
-		BASEMATRIX, 
-		CSPARSEMATRIX
-	};
-
 	template<typename TYPE>
 	class Matrix
 	{
@@ -50,7 +43,10 @@ namespace LinearAlgebra
 	Matrix<TYPE>::Matrix(const unsigned int m, const unsigned int n) 
 	{
 		std::cout<<"Matrix Constructor\n";
-		m_type = BASEMATRIX;
+
+		//A line like this must appear in each matrix constructor in order
+		//for GeneralLinearAlgebra wrapper to work correctly
+		m_type = GetMatrixType<Matrix<TYPE> >::matrixType(); 
 	}
 
 	template<typename TYPE>

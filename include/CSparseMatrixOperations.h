@@ -3,11 +3,17 @@
 #define _CSPARSE_H
 #include "CSparseMatrix.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 namespace LinearAlgebra
 {
-
-	inline int multiply(CSparseMatrix *C, CSparseMatrix *A, CSparseMatrix *B) { std::cout<<"CSparse Multiply \n"; return 1;}
+	int multiply(CSparseMatrix *C, CSparseMatrix *A, CSparseMatrix *B);
 }
 
+#ifdef __cplusplus
+}
+#endif
 #endif
 #endif
